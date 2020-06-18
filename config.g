@@ -12,7 +12,7 @@ M550 P"Dusa"                                          ; set printer name
 M569 P0.0 S1                                            ; physical drive 0.0 goes forwards, X
 M569 P0.1 S0                                            ; physical drive 0.1 goes backwards, Y
 M569 P0.2 S1                                            ; physical drive 0.2 goes forwards, Z
-M569 P0.3 S1                                            ; physical drive 0.3 goes forwards, E1
+M569 P0.3 S0                                            ; physical drive 0.3 goes backwards, E1
 M569 P0.4 S1                                            ; physical drive 0.4 goes forwards, E2
 M569 P0.5 S0                                            ; physical drive 0.5 goes backwards, U
 M584 X0.0 Y0.1 Z0.2 E0.3:0.4 U0.5                        ; set drive mapping, U will be second x carriage
@@ -25,8 +25,8 @@ M906 X800 Y800 Z800 E800:800 U800 I30                    ; set motor currents (m
 M84 S30                                                 ; Set idle timeout
 
 ; Axis Limits
-M208 X0 Y0 Z0 U0 S1                                        ; set axis minima
-M208 X243 Y210 Z238 U243 S0                                  ; set axis maxima
+M208 X-43 Y0 Z-1 U0 S1                                        ; set axis minima
+M208 X200 Y210 Z238 U243 S0                                  ; set axis maxima
 
 ; Endstops use ^ to add pullups on endstop switches
 M574 X1 S1 P"^io0.in"                                    ; configure NC, on Pin io0.in
@@ -37,8 +37,8 @@ M574 U2 S1 P"^io3.in"                                    ; configure NC, on Pin 
 ; Z-Probe
 M950 S0 C"io7.out"                                      ; create servo pin 0 for BLTouch
 M558 P9 C"io7.in" H6 F100 T2000                 		; set Z probe type to bltouch and the dive height + speeds
-G31 P25 X-40 Y0 Z2.922                                   ; set Z probe trigger value, offset and trigger height
-M557 X30:200 Y5:205 P4                                ; define mesh grid
+G31 P25 X-40 Y0 Z2.922                                  ; set Z probe trigger value, offset and trigger height
+M557 X-20:159 Y5:205 P3                                   ; define mesh grid
 
 ; Heater 0 Bed
 M308 S0 P"temp0" Y"thermistor" T100000 B4138            ; configure sensor 0 as thermistor on pin temp0
@@ -71,7 +71,7 @@ M106 P2 S0.5 H-1                                        ; set fan 2 value. Therm
 
 ; Water Pump
 M950 F3 C"out7" Q25000                                  ; create fan 3 on pin "out7", don't invert, set frequency to 25 kHz, Water Pump motor
-M106 P3 S0 H-1                                        	; set fan 3 value. Thermostatic control is turned off
+M106 P3 S0.1 H-1                                        ; set fan 3 value. Thermostatic control is turned off
 
 ; Tools
 M563 P0 S"Left" D0 H1 F0                                ; define tool 0
