@@ -36,9 +36,9 @@ M574 U2 S1 P"^io3.in"                                    ; configure NC, on Pin 
 
 ; Z-Probe
 M950 S0 C"io7.out"                                      ; create servo pin 0 for BLTouch
-M558 P9 C"io7.in" H6 F100 T2000                 		; set Z probe type to bltouch and the dive height + speeds
+M558 P9 C"io7.in" H3 F100 T4000                 		; set Z probe type to bltouch and the dive height + speeds
 G31 P25 X-40 Y0 Z2.922                                  ; set Z probe trigger value, offset and trigger height
-M557 X-20:159 Y5:205 P3                                   ; define mesh grid
+M557 X-20:159 Y5:205 P4                                 ; define mesh grid
 
 ; Heater 0 Bed
 M308 S0 P"temp0" Y"thermistor" T100000 B4138            ; configure sensor 0 as thermistor on pin temp0
@@ -75,7 +75,7 @@ M106 P3 S0.1 H-1                                        ; set fan 3 value. Therm
 
 ; Tools
 M563 P0 S"Left" D0 H1 F0                                ; define tool 0
-G10 P0 X0 Y0 Z0                                         ; set tool 0 axis offsets
+G10 P0 X0 Y0 Z0.05                                      ; set tool 0 axis offsets
 G10 P0 R0 S0                                            ; set initial tool 0 active and standby temperatures to 0C
 M563 P1 S"Right" D1 H2 F1                               ; define tool 1
 G10 P1 U0 Y0 Z0                                         ; set tool 1 axis offsets

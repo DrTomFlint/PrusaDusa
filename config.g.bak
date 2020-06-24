@@ -36,9 +36,9 @@ M574 U2 S1 P"^io3.in"                                    ; configure NC, on Pin 
 
 ; Z-Probe
 M950 S0 C"io7.out"                                      ; create servo pin 0 for BLTouch
-M558 P9 C"io7.in" H6 F100 T2000                 		; set Z probe type to bltouch and the dive height + speeds
+M558 P9 C"io7.in" H3 F100 T4000                 		; set Z probe type to bltouch and the dive height + speeds
 G31 P25 X-40 Y0 Z2.922                                  ; set Z probe trigger value, offset and trigger height
-M557 X-20:159 Y5:205 P3                                   ; define mesh grid
+M557 X-20:159 Y5:205 P4                                 ; define mesh grid
 
 ; Heater 0 Bed
 M308 S0 P"temp0" Y"thermistor" T100000 B4138            ; configure sensor 0 as thermistor on pin temp0
@@ -71,7 +71,7 @@ M106 P2 S0.5 H-1                                        ; set fan 2 value. Therm
 
 ; Water Pump
 M950 F3 C"out7" Q25000                                  ; create fan 3 on pin "out7", don't invert, set frequency to 25 kHz, Water Pump motor
-M106 P3 S0 H-1                                        	; set fan 3 value. Thermostatic control is turned off
+M106 P3 S0.1 H-1                                        ; set fan 3 value. Thermostatic control is turned off
 
 ; Tools
 M563 P0 S"Left" D0 H1 F0                                ; define tool 0
