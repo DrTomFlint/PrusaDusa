@@ -18,10 +18,10 @@ M569 P0.5 S0                                            ; physical drive 0.5 goe
 M584 X0.0 Y0.1 Z0.2 E0.3:0.4 U0.5                        ; set drive mapping, U will be second x carriage
 M350 X16 Y16 Z16 E16:16 U16 I1                           ; configure microstepping with interpolation
 M92 X200.00 Y200.00 Z400.00 E837.00:837.00 U200.00      ; set steps per mm
-M566 X900.00 Y900.00 Z200.00 E120.00:120.00 U900.00       ; set maximum instantaneous speed changes (mm/min)
-M203 X6000.00 Y6000.00 Z1000.00 E1200.00:1200.00 U6000.00 ; set maximum speeds (mm/min)
-M201 X500.00 Y500.00 Z100.00 E250.00:250.00 U500.00       ; set accelerations (mm/s^2)
-M906 X800 Y800 Z800 E800:800 U800 I30                    ; set motor currents (mA) and motor idle factor in per cent
+M566 X900.00 Y900.00 Z200.00 E600.00 600.00 U900.00       ; set maximum instantaneous speed changes (mm/min), don't decel if change less than this
+M203 X6000.00 Y6000.00 Z1000.00 E10000.00:10000.00 U6000.00 ; set maximum speeds (mm/min)
+M201 X1000.00 Y1000.00 Z250.00 E3000.00:3000.00 U1000.00       ; set accelerations (mm/s^2)
+M906 X1200 Y1200 Z1200 E800:800 U1200 I50                    ; set motor currents (mA) and motor idle factor in per cent
 M84 S30                                                 ; Set idle timeout
 
 ; Axis Limits
@@ -59,25 +59,25 @@ M950 H2 C"out2" T2                                      ; create nozzle heater o
 M143 H2 S280                                            ; set temperature limit for heater 2 to 280C
 M307 H2 A254.7 C100.2 D3.1 V23.9 B0 S1.00               ; calibrate with M303 H2 P1 S230, 17 June 2020
 
-; Fans
+; Radiator Fan
 M950 F0 C"!out4" Q25000                                 ; create fan 0 on pin out4, !=invert output, and set frequency to 25 kHz, Radiator fan
 M106 P0 S0.5 H-1                                        ; set fan 0, speed 0.5, Thermostatic control is turned off (-1)
 
 ; Blowers
 M950 F1 C"!^out5" Q25000                                ; create fan 1 on pin "out5", !=invert output, set frequency to 25 kHz, Extruder 1 blower
-M106 P1 S0.5 H-1                                        ; set fan 1 value. Thermostatic control is turned off, Extruder 2 blower
+M106 P1 S0 H-1                                        ; set fan 1 value. Thermostatic control is turned off, Extruder 2 blower
 M950 F2 C"!^out6" Q25000                                ; create fan 2 on pin "out6", !=invert output, set frequency to 25 kHz, Extruder 2 blower
-M106 P2 S0.5 H-1                                        ; set fan 2 value. Thermostatic control is turned off
+M106 P2 S0 H-1                                        ; set fan 2 value. Thermostatic control is turned off
 
 ; Water Pump
 M950 F3 C"out7" Q25000                                  ; create fan 3 on pin "out7", don't invert, set frequency to 25 kHz, Water Pump motor
 M106 P3 S0.1 H-1                                        ; set fan 3 value. Thermostatic control is turned off
 
 ; Tools
-M563 P0 S"Left" D0 H1 F0                                ; define tool 0
+M563 P0 S"Left" D0 H1 F1                                ; define tool 0
 G10 P0 X0 Y0 Z0.05                                      ; set tool 0 axis offsets
 G10 P0 R0 S0                                            ; set initial tool 0 active and standby temperatures to 0C
-M563 P1 S"Right" D1 H2 F1                               ; define tool 1
+M563 P1 S"Right" D1 H2 F2                               ; define tool 1
 G10 P1 U0 Y0 Z0                                         ; set tool 1 axis offsets
 G10 P1 R0 S0                                            ; set initial tool 1 active and standby temperatures to 0C
 
