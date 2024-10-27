@@ -1,0 +1,449 @@
+; LedTest1 macro in Gcode for a 19 Led Dotstar string
+; M150 command on the Duet3 controller board RepRap firmware default values work fine
+;
+
+; --------- red sequence --------------------------
+M150 R0 S19		; turn all leds off
+G4 P200			; dwell 200 mSec
+
+M150 R255 S1 F1	; on led1
+M150 R0 S18		; off remaining 18
+G4 P200			; dwell 200 mSec
+
+M150 R0 S1 F1	; off led 1
+M150 R255 S1 F1	; on led 2
+M150 R0 S17		; off remaining 17
+G4 P200			; dwell 200 mSec
+
+M150 R0 S2 F1	; off led 2
+M150 R255 S1 F1	; on led 3
+M150 R0 S16		; off remaining 16
+G4 P200			; dwell 200 mSec
+
+M150 R0 S3 F1	; off led 3
+M150 R255 S1 F1	; on led 4
+M150 R0 S15		; off remaining 15
+G4 P200			; dwell 200 mSec
+
+M150 R0 S4 F1	; off led 4
+M150 R255 S1 F1	; on led 5
+M150 R0 S14		; off remaining 14
+G4 P200			; dwell 200 mSec
+
+M150 R0 S5 F1	; off led 5
+M150 R255 S1 F1	; on led 6
+M150 R0 S13		; off remaining 13
+G4 P200			; dwell 200 mSec
+
+M150 R0 S6 F1	; off led 6
+M150 R255 S1 F1	; on led 7
+M150 R0 S12		; off remaining 12
+G4 P200			; dwell 200 mSec
+
+M150 R0 S7 F1	; off led 7
+M150 R255 S1 F1	; on led 8
+M150 R0 S11		; off remaining 11
+G4 P200			; dwell 200 mSec
+
+M150 R0 S8 F1	; off led 8
+M150 R255 S1 F1	; on led 9
+M150 R0 S10		; off remaining 10
+G4 P200			; dwell 200 mSec
+
+M150 R0 S9 F1	; off led 9
+M150 R255 S1 F1	; on led 10
+M150 R0 S9		; off remaining 9
+G4 P200			; dwell 200 mSec
+
+M150 R0 S10 F1	; off led 10
+M150 R255 S1 F1	; on led 11
+M150 R0 S8		; off remaining 8
+G4 P200			; dwell 200 mSec
+
+M150 R0 S11 F1	; off led 11
+M150 R255 S1 F1	; on led 12
+M150 R0 S7		; off remaining 7
+G4 P200			; dwell 200 mSec
+
+M150 R0 S12 F1	; off led 12
+M150 R255 S1 F1	; on led 13
+M150 R0 S6		; off remaining 6
+G4 P200			; dwell 200 mSec
+
+M150 R0 S13 F1	; off led 13
+M150 R255 S1 F1	; on led 14
+M150 R0 S5		; off remaining 5
+G4 P200			; dwell 200 mSec
+
+M150 R0 S14 F1	; off led 14
+M150 R255 S1 F1	; on led 15
+M150 R0 S4		; off remaining 4
+G4 P200			; dwell 200 mSec
+
+M150 R0 S15 F1	; off led 15
+M150 R255 S1 F1	; on led 16
+M150 R0 S3		; off remaining 3
+G4 P200			; dwell 200 mSec
+
+M150 R0 S16 F1	; off led 16
+M150 R255 S1 F1	; on led 17
+M150 R0 S2		; off remaining 2
+G4 P200			; dwell 200 mSec
+
+M150 R0 S17 F1	; off led 17
+M150 R255 S1 F1	; on led 18
+M150 R0 S1		; off remaining 1
+G4 P200			; dwell 200 mSec
+
+M150 R0 S18 F1	; off led 18
+M150 R255 S1 	; on led 19
+G4 P200			; dwell 200 mSec
+
+M150 R0 S19 	; off led 19
+G4 P600			; dwell 200 mSec
+
+
+; --------- green sequence --------------------------
+
+M150 U0 S19		; turn all leds off
+G4 P200			; dwell 200 mSec
+
+M150 U255 S1 F1	; on led1
+M150 U0 S18		; off remaining 18
+G4 P200			; dwell 200 mSec
+
+M150 U0 S1 F1	; off led 1
+M150 U255 S1 F1	; on led 2
+M150 U0 S17		; off remaining 17
+G4 P200			; dwell 200 mSec
+
+M150 U0 S2 F1	; off led 2
+M150 U255 S1 F1	; on led 3
+M150 U0 S16		; off remaining 16
+G4 P200			; dwell 200 mSec
+
+M150 U0 S3 F1	; off led 3
+M150 U255 S1 F1	; on led 4
+M150 U0 S15		; off remaining 15
+G4 P200			; dwell 200 mSec
+
+M150 U0 S4 F1	; off led 4
+M150 U255 S1 F1	; on led 5
+M150 U0 S14		; off remaining 14
+G4 P200			; dwell 200 mSec
+
+M150 U0 S5 F1	; off led 5
+M150 U255 S1 F1	; on led 6
+M150 U0 S13		; off remaining 13
+G4 P200			; dwell 200 mSec
+
+M150 U0 S6 F1	; off led 6
+M150 U255 S1 F1	; on led 7
+M150 U0 S12		; off remaining 12
+G4 P200			; dwell 200 mSec
+
+M150 U0 S7 F1	; off led 7
+M150 U255 S1 F1	; on led 8
+M150 U0 S11		; off remaining 11
+G4 P200			; dwell 200 mSec
+
+M150 U0 S8 F1	; off led 8
+M150 U255 S1 F1	; on led 9
+M150 U0 S10		; off remaining 10
+G4 P200			; dwell 200 mSec
+
+M150 U0 S9 F1	; off led 9
+M150 U255 S1 F1	; on led 10
+M150 U0 S9		; off remaining 9
+G4 P200			; dwell 200 mSec
+
+M150 U0 S10 F1	; off led 10
+M150 U255 S1 F1	; on led 11
+M150 U0 S8		; off remaining 8
+G4 P200			; dwell 200 mSec
+
+M150 U0 S11 F1	; off led 11
+M150 U255 S1 F1	; on led 12
+M150 U0 S7		; off remaining 7
+G4 P200			; dwell 200 mSec
+
+M150 U0 S12 F1	; off led 12
+M150 U255 S1 F1	; on led 13
+M150 U0 S6		; off remaining 6
+G4 P200			; dwell 200 mSec
+
+M150 U0 S13 F1	; off led 13
+M150 U255 S1 F1	; on led 14
+M150 U0 S5		; off remaining 5
+G4 P200			; dwell 200 mSec
+
+M150 U0 S14 F1	; off led 14
+M150 U255 S1 F1	; on led 15
+M150 U0 S4		; off remaining 4
+G4 P200			; dwell 200 mSec
+
+M150 U0 S15 F1	; off led 15
+M150 U255 S1 F1	; on led 16
+M150 U0 S3		; off remaining 3
+G4 P200			; dwell 200 mSec
+
+M150 U0 S16 F1	; off led 16
+M150 U255 S1 F1	; on led 17
+M150 U0 S2		; off remaining 2
+G4 P200			; dwell 200 mSec
+
+M150 U0 S17 F1	; off led 17
+M150 U255 S1 F1	; on led 18
+M150 U0 S1		; off remaining 1
+G4 P200			; dwell 200 mSec
+
+M150 U0 S18 F1	; off led 18
+M150 U255 S1 	; on led 19
+G4 P200			; dwell 200 mSec
+
+M150 U0 S19 	; off led 19
+G4 P600			; dwell 200 mSec
+
+; -------- blue sequence ----------------
+
+M150 B0 S19		; turn all leds off
+G4 P200			; dwell 200 mSec
+
+M150 B255 S1 F1	; on led1
+M150 B0 S18		; off remaining 18
+G4 P200			; dwell 200 mSec
+
+M150 B0 S1 F1	; off led 1
+M150 B255 S1 F1	; on led 2
+M150 B0 S17		; off remaining 17
+G4 P200			; dwell 200 mSec
+
+M150 B0 S2 F1	; off led 2
+M150 B255 S1 F1	; on led 3
+M150 B0 S16		; off remaining 16
+G4 P200			; dwell 200 mSec
+
+M150 B0 S3 F1	; off led 3
+M150 B255 S1 F1	; on led 4
+M150 B0 S15		; off remaining 15
+G4 P200			; dwell 200 mSec
+
+M150 B0 S4 F1	; off led 4
+M150 B255 S1 F1	; on led 5
+M150 B0 S14		; off remaining 14
+G4 P200			; dwell 200 mSec
+
+M150 B0 S5 F1	; off led 5
+M150 B255 S1 F1	; on led 6
+M150 B0 S13		; off remaining 13
+G4 P200			; dwell 200 mSec
+
+M150 B0 S6 F1	; off led 6
+M150 B255 S1 F1	; on led 7
+M150 B0 S12		; off remaining 12
+G4 P200			; dwell 200 mSec
+
+M150 B0 S7 F1	; off led 7
+M150 B255 S1 F1	; on led 8
+M150 B0 S11		; off remaining 11
+G4 P200			; dwell 200 mSec
+
+M150 B0 S8 F1	; off led 8
+M150 B255 S1 F1	; on led 9
+M150 B0 S10		; off remaining 10
+G4 P200			; dwell 200 mSec
+
+M150 B0 S9 F1	; off led 9
+M150 B255 S1 F1	; on led 10
+M150 B0 S9		; off remaining 9
+G4 P200			; dwell 200 mSec
+
+M150 B0 S10 F1	; off led 10
+M150 B255 S1 F1	; on led 11
+M150 B0 S8		; off remaining 8
+G4 P200			; dwell 200 mSec
+
+M150 B0 S11 F1	; off led 11
+M150 B255 S1 F1	; on led 12
+M150 B0 S7		; off remaining 7
+G4 P200			; dwell 200 mSec
+
+M150 B0 S12 F1	; off led 12
+M150 B255 S1 F1	; on led 13
+M150 B0 S6		; off remaining 6
+G4 P200			; dwell 200 mSec
+
+M150 B0 S13 F1	; off led 13
+M150 B255 S1 F1	; on led 14
+M150 B0 S5		; off remaining 5
+G4 P200			; dwell 200 mSec
+
+M150 B0 S14 F1	; off led 14
+M150 B255 S1 F1	; on led 15
+M150 B0 S4		; off remaining 4
+G4 P200			; dwell 200 mSec
+
+M150 B0 S15 F1	; off led 15
+M150 B255 S1 F1	; on led 16
+M150 B0 S3		; off remaining 3
+G4 P200			; dwell 200 mSec
+
+M150 B0 S16 F1	; off led 16
+M150 B255 S1 F1	; on led 17
+M150 B0 S2		; off remaining 2
+G4 P200			; dwell 200 mSec
+
+M150 B0 S17 F1	; off led 17
+M150 B255 S1 F1	; on led 18
+M150 B0 S1		; off remaining 1
+G4 P200			; dwell 200 mSec
+
+M150 B0 S18 F1	; off led 18
+M150 B255 S1 	; on led 19
+G4 P200			; dwell 200 mSec
+
+M150 B0 S19 	; off led 19
+G4 P600			; dwell 200 mSec
+
+; -------- white sequence ----------------
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200			; dwell 200 mSec
+
+M150 R255 U255 B255 S1 F1	; on led1
+M150 R0 U0 B0 S18		; off remaining 18
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S1 F1	; off led 1
+M150 R255 U255 B255 S1 F1	; on led 2
+M150 R0 U0 B0 S17		; off remaining 17
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S2 F1	; off led 2
+M150 R255 U255 B255 S1 F1	; on led 3
+M150 R0 U0 B0 S16		; off remaining 16
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S3 F1	; off led 3
+M150 R255 U255 B255 S1 F1	; on led 4
+M150 R0 U0 B0 S15		; off remaining 15
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S4 F1	; off led 4
+M150 R255 U255 B255 S1 F1	; on led 5
+M150 R0 U0 B0 S14		; off remaining 14
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S5 F1	; off led 5
+M150 R255 U255 B255 S1 F1	; on led 6
+M150 R0 U0 B0 S13		; off remaining 13
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S6 F1	; off led 6
+M150 R255 U255 B255 S1 F1	; on led 7
+M150 R0 U0 B0 S12		; off remaining 12
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S7 F1	; off led 7
+M150 R255 U255 B255 S1 F1	; on led 8
+M150 R0 U0 B0 S11		; off remaining 11
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S8 F1	; off led 8
+M150 R255 U255 B255 S1 F1	; on led 9
+M150 R0 U0 B0 S10		; off remaining 10
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S9 F1	; off led 9
+M150 R255 U255 B255 S1 F1	; on led 10
+M150 R0 U0 B0 S9		; off remaining 9
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S10 F1	; off led 10
+M150 R255 U255 B255 S1 F1	; on led 11
+M150 R0 U0 B0 S8		; off remaining 8
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S11 F1	; off led 11
+M150 R255 U255 B255 S1 F1	; on led 12
+M150 R0 U0 B0 S7		; off remaining 7
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S12 F1	; off led 12
+M150 R255 U255 B255 S1 F1	; on led 13
+M150 R0 U0 B0 S6		; off remaining 6
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S13 F1	; off led 13
+M150 R255 U255 B255 S1 F1	; on led 14
+M150 R0 U0 B0 S5		; off remaining 5
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S14 F1	; off led 14
+M150 R255 U255 B255 S1 F1	; on led 15
+M150 R0 U0 B0 S4		; off remaining 4
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S15 F1	; off led 15
+M150 R255 U255 B255 S1 F1	; on led 16
+M150 R0 U0 B0 S3		; off remaining 3
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S16 F1	; off led 16
+M150 R255 U255 B255 S1 F1	; on led 17
+M150 R0 U0 B0 S2		; off remaining 2
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S17 F1	; off led 17
+M150 R255 U255 B255 S1 F1	; on led 18
+M150 R0 U0 B0 S1		; off remaining 1
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S18 F1	; off led 18
+M150 R255 U255 B255 S1	; on led 19
+G4 P200			; dwell 200 mSec
+
+M150 R0 U0 B0 S19	; off led 19
+G4 P600			; dwell 200 mSec
+
+; ---------- all leds at once -------------------------------
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200					; dwell 200 mSec
+
+M150 R255 U0 B0 S19	; all on red
+G4 P600
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200					; dwell 200 mSec
+
+M150 R0 U255 B0 S19	; all on green
+G4 P600
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200					; dwell 200 mSec
+
+M150 R0 U0 B255 S19	; all on blue
+G4 P600
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200					; dwell 200 mSec
+
+M150 R255 U255 B255 S19	; all on white
+G4 P600
+
+M150 R200 U200 B200 S19	; all on white, dimmer
+G4 P600
+
+M150 R150 U150 B150 S19	; all on white, dimmer
+G4 P600
+
+M150 R100 U100 B100 S19	; all on white, dimmer
+G4 P600
+
+M150 R50 U50 B50 S19	; all on white, dimmer
+G4 P600
+
+M150 R0 U0 B0 S19		; turn all leds off
+G4 P200					; dwell 200 mSec
+
