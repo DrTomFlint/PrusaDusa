@@ -7,6 +7,6 @@ M140 S0 R0 	    ; set bed active to 0, standby to 0
 M144 S0			; make bed standby
 G10 P0 S0 R0   ; set tool 0 temp to 0, standby temp to 0
 G10 P1 S0 R0   ; set tool 1 temp to 0, standby temp to 0
-G1 Y210 Z235 F4000	; move Y to front, Z up to near top
+;G1 Y210 Z235 F4000	; move Y to front, Z up to near top
 M118 S"Finished Cancel.g"		; echo message to console
 
